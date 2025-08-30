@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Real-Time Object Detection</h1>
+
+        <div class="video-container">
+            <h2>Video Feed</h2>
+            <img id="video-feed" src="{{ url_for('video_feed') }}" alt="Video Feed">
+        </div>
+
+        <div class="object-count-container">
+            <h2>Object Count</h2>
+            <ul id="object-count-list">
+                <!-- Object count will be populated here -->
+            </ul>
+        </div>
+
+        <div id="labeling-container" class="labeling-container">
+            <h2>Label Object</h2>
+            <form id="label-form">
+                <input type="hidden" id="object-id">
+                <label for="object-label">Label:</label>
+                <input type="text" id="object-label" required>
+                <button type="submit">Submit Label</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
